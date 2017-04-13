@@ -7,7 +7,7 @@ describe("The AppComponent", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-        declarations: [ AppComponent ]
+            declarations: [ AppComponent ]
         });
         fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
@@ -18,4 +18,20 @@ describe("The AppComponent", () => {
         const h1 = debugEl.nativeElement.querySelector('h1');
         expect(h1.textContent).toEqual('AppComponent template');
     });
+
+    it("should add an exclamation mark", () => {
+        fixture.componentInstance.addIt();
+
+        const debugEl = fixture.debugElement;
+        const h1 = debugEl.nativeElement.querySelector('h1');
+        expect(h1.textContent).toEqual('AppComponent template!');
+    })
+
+    it("should remove an the last character", () => {
+        fixture.componentInstance.removeIt();
+
+        const debugEl = fixture.debugElement;
+        const h1 = debugEl.nativeElement.querySelector('h1');
+        expect(h1.textContent).toEqual('AppComponent templat');
+    })
 });
