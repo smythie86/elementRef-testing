@@ -7,6 +7,7 @@
     "lite": "lite-server",
     "postinstall": "npm install -S @types/node @types/core-js",
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
@@ -32,7 +33,14 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.47",
     "concurrently": "^3.1.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "lite-server": "^2.2.2",
     "typescript": "^2.1.5"
   }
